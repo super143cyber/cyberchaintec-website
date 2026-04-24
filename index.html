@@ -1,0 +1,1365 @@
+<!DOCTYPE html><test>hello</test><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberChain Technologies — AI-Native Infrastructure</title>
+  <meta name="description" content="CyberChain Technologies deploys custom AI agent farms for enterprise clients. AXIOM-powered intelligence. Toronto-based. Book your consultation today.">
+  <style>
+    :root {
+      --emerald: #00ff88;
+      --cyan: #00d4ff;
+      --dark: #05070d;
+      --dark2: #080c14;
+      --dark3: #0d1520;
+      --text: #c8d8e8;
+      --text-dim: #6a7a8a;
+      --border: rgba(0,255,136,0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      background: rgba(5,7,13,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: inherit;
+    }
+    .nav-logo .hex {
+      width: 36px; height: 36px;
+    }
+    .nav-logo span {
+      font-size: 15px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--emerald);
+    }
+    .nav-links {
+      display: flex; gap: 36px; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text-dim);
+      font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--emerald); }
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--emerald);
+      color: var(--emerald);
+      padding: 9px 24px;
+      border-radius: 4px;
+      font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer; text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { background: var(--emerald); color: var(--dark); }
+
+    /* ─── HERO ────────────────────────────────── */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    #hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      z-index: 0;
+    }
+    #hero-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(5,7,13,0.2) 0%,
+        rgba(5,7,13,0.1) 50%,
+        rgba(5,7,13,0.9) 100%
+      );
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      text-align: center;
+      max-width: 900px;
+      padding: 0 24px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(0,255,136,0.06);
+      padding: 6px 16px; border-radius: 20px;
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--emerald); margin-bottom: 32px;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-content h1 {
+      font-size: clamp(38px, 6vw, 80px);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+    .hero-content h1 .accent { color: var(--emerald); }
+    .hero-content p {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-dim);
+      max-width: 640px; margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+    .hero-buttons {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--emerald);
+      color: var(--dark);
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      padding: 14px 36px;
+      border-radius: 4px;
+      font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(200,216,232,0.2);
+      cursor: pointer; transition: border-color .2s, color .2s;
+    }
+    .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+    .hero-scroll {
+      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--text-dim); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      animation: float 3s ease-in-out infinite;
+    }
+    .hero-scroll::after {
+      content: ''; width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--emerald), transparent);
+    }
+    @keyframes float { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+    /* ─── SECTION BASE ───────────────────────── */
+    section { padding: 120px 5%; }
+    .section-label {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--emerald); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; max-width: 60px; height: 1px;
+      background: var(--emerald); opacity: 0.4;
+    }
+    h2.section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800; letter-spacing: -0.5px;
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .section-sub {
+      font-size: 17px; color: var(--text-dim);
+      max-width: 560px; line-height: 1.7;
+      margin-bottom: 60px;
+    }
+
+    /* ─── STATS BAR ───────────────────────────── */
+    #stats {
+      padding: 40px 5%;
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 40px; text-align: center;
+    }
+    .stat-number {
+      font-size: 42px; font-weight: 800;
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--text-dim); margin-top: 8px;
+    }
+
+    /* ─── AXIOM SECTION ──────────────────────── */
+    #axiom {
+      background: var(--dark2);
+      position: relative; overflow: hidden;
+    }
+    #axiom::before {
+      content: ''; position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,136,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .axiom-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: flex-start;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .axiom-right {
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .axiom-video-wrap {
+      position: relative; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(0,255,136,0.08), 0 0 120px rgba(0,212,255,0.04);
+      aspect-ratio: 16/9;
+    }
+    .axiom-video-wrap video,
+    .axiom-video-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .axiom-tag {
+      position: absolute; bottom: 16px; left: 16px;
+      background: rgba(5,7,13,0.8); backdrop-filter: blur(8px);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 6px 14px; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--emerald);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .axiom-tag::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--emerald); box-shadow: 0 0 6px var(--emerald);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    /* ─── THREAT FEED TERMINAL ──────────────── */
+    .threat-feed {
+      background: #050a08;
+      border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,255,136,0.06);
+    }
+    .threat-feed-header {
+      background: rgba(0,255,136,0.06);
+      border-bottom: 1px solid rgba(0,255,136,0.15);
+      padding: 10px 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .feed-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse-dot 1.5s ease-in-out infinite;
+    }
+    .feed-title {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--emerald); font-weight: 700; flex: 1;
+    }
+    .feed-time {
+      font-size: 11px; color: var(--text-dim); font-family: monospace;
+    }
+    .threat-feed-body {
+      height: 260px; overflow: hidden; position: relative;
+      padding: 0;
+    }
+    .threat-feed-body::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+      background: linear-gradient(to bottom, transparent, #050a08);
+      pointer-events: none; z-index: 2;
+    }
+    .feed-scroll {
+      animation: feed-scroll-anim 28s linear infinite;
+      padding: 16px;
+    }
+    @keyframes feed-scroll-anim {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+    .feed-entry {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0,255,136,0.06);
+    }
+    .feed-entry-header {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
+    }
+    .feed-severity {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      padding: 2px 8px; border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .sev-critical { background: rgba(255,60,60,0.15); color: #ff4444; border: 1px solid rgba(255,60,60,0.3); }
+    .sev-high { background: rgba(255,140,0,0.15); color: #ff8c00; border: 1px solid rgba(255,140,0,0.3); }
+    .sev-medium { background: rgba(255,200,0,0.12); color: #ffc800; border: 1px solid rgba(255,200,0,0.25); }
+    .feed-cve {
+      font-size: 11px; font-family: monospace; color: var(--cyan);
+      font-weight: 600;
+    }
+    .feed-ts { font-size: 10px; color: var(--text-dim); font-family: monospace; margin-left: auto; }
+    .feed-entry-title {
+      font-size: 13px; font-weight: 600; color: #e8f4e8; margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .feed-entry-body {
+      font-size: 12px; color: var(--text-dim); line-height: 1.6;
+      font-family: monospace;
+    }
+    .feed-entry-body .kv { color: var(--text-dim); }
+    .feed-entry-body .val { color: #b8f0d0; }
+    .feed-entry-body .highlight { color: var(--emerald); }
+    .feed-entry.axiom-msg .feed-entry-title {
+      color: var(--emerald);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .feed-entry.axiom-msg .feed-entry-title::before {
+      content: '⬡'; font-size: 12px;
+    }
+    .axiom-features { list-style: none; }
+    .axiom-features li {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(200,216,232,0.06);
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 15px; line-height: 1.6;
+    }
+    .axiom-features li::before {
+      content: '▸'; color: var(--emerald); font-size: 13px;
+      margin-top: 2px; flex-shrink: 0;
+    }
+    .axiom-features strong { color: white; display: block; font-size: 14px; }
+
+    /* ─── AGENT FARM ─────────────────────────── */
+    #agents {
+      position: relative; overflow: hidden;
+    }
+    .agents-inner { max-width: 1200px; margin: 0 auto; }
+    .agents-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center; margin-top: 60px;
+    }
+    .agents-image-wrap {
+      position: relative; border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(0,212,255,0.15);
+      box-shadow: 0 0 60px rgba(0,212,255,0.06), 0 0 120px rgba(0,255,136,0.04);
+      aspect-ratio: 16/9;
+    }
+    .agents-image-wrap img,
+    .agents-image-wrap video {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .agents-tag {
+      position: absolute; bottom: 16px; right: 16px;
+      background: rgba(5,7,13,0.8); backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,212,255,0.2); border-radius: 6px;
+      padding: 6px 14px; font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase; color: var(--cyan);
+    }
+    .agent-cards {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .agent-card {
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 20px;
+      transition: border-color .2s, transform .2s;
+    }
+    .agent-card:hover { border-color: var(--emerald); transform: translateY(-2px); }
+    .agent-card .icon {
+      font-size: 22px; margin-bottom: 10px;
+    }
+    .agent-card h4 {
+      font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: white; margin-bottom: 6px;
+    }
+    .agent-card p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+    /* ─── SERVICES ────────────────────────────── */
+    #services { background: var(--dark2); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; max-width: 1200px; margin: 0 auto;
+    }
+    .service-card {
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 36px;
+      transition: border-color .2s, transform .2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--emerald), transparent);
+      opacity: 0; transition: opacity .2s;
+    }
+    .service-card:hover { border-color: rgba(0,255,136,0.3); transform: translateY(-4px); }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: rgba(0,255,136,0.08);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 18px; font-weight: 700; color: white;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 14px; color: var(--text-dim); line-height: 1.7;
+    }
+
+    /* ─── PRICING ─────────────────────────────── */
+    #pricing { }
+    .pricing-inner { max-width: 1100px; margin: 0 auto; }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 60px;
+    }
+    .pricing-card {
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 36px;
+      position: relative; transition: transform .2s;
+    }
+    .pricing-card:hover { transform: translateY(-4px); }
+    .pricing-card.featured {
+      border-color: var(--emerald);
+      background: linear-gradient(135deg, rgba(0,255,136,0.04) 0%, var(--dark3) 100%);
+    }
+    .pricing-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--emerald); color: var(--dark);
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 16px; border-radius: 20px;
+    }
+    .pricing-tier {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 12px;
+    }
+    .pricing-price {
+      font-size: 42px; font-weight: 800; color: white;
+      line-height: 1; margin-bottom: 4px;
+    }
+    .pricing-price span { font-size: 16px; font-weight: 400; color: var(--text-dim); }
+    .pricing-sub { font-size: 13px; color: var(--text-dim); margin-bottom: 28px; }
+    .pricing-features { list-style: none; margin-bottom: 36px; }
+    .pricing-features li {
+      padding: 10px 0; border-bottom: 1px solid rgba(200,216,232,0.05);
+      font-size: 14px; color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .pricing-features li::before {
+      content: '✓'; color: var(--emerald); font-weight: 700; flex-shrink: 0;
+    }
+    .pricing-features li.dim { color: var(--text-dim); }
+    .pricing-features li.dim::before { color: var(--text-dim); }
+    .pricing-cta {
+      display: block; text-align: center;
+      padding: 12px; border-radius: 6px;
+      font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: all .2s; cursor: pointer;
+    }
+    .pricing-card.featured .pricing-cta {
+      background: var(--emerald); color: var(--dark);
+    }
+    .pricing-card.featured .pricing-cta:hover { opacity: 0.9; }
+    .pricing-card:not(.featured) .pricing-cta {
+      border: 1px solid var(--border); color: var(--text);
+    }
+    .pricing-card:not(.featured) .pricing-cta:hover {
+      border-color: var(--emerald); color: var(--emerald);
+    }
+
+    /* ─── TIMELINE ────────────────────────────── */
+    #timeline { background: var(--dark2); }
+    .timeline-inner { max-width: 800px; margin: 0 auto; }
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, var(--emerald), transparent);
+      opacity: 0.3;
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 48px;
+    }
+    .timeline-dot {
+      position: absolute; left: -29px; top: 4px;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 12px var(--emerald);
+    }
+    .timeline-week {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--emerald); margin-bottom: 6px;
+    }
+    .timeline-item h4 {
+      font-size: 16px; font-weight: 700; color: white; margin-bottom: 8px;
+    }
+    .timeline-item p {
+      font-size: 14px; color: var(--text-dim); line-height: 1.6;
+    }
+
+    /* ─── CONTACT ─────────────────────────────── */
+    #contact {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: ''; position: absolute; bottom: -300px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,136,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-inner {
+      max-width: 640px; margin: 0 auto; position: relative; z-index: 1;
+      text-align: center;
+    }
+    .contact-inner .section-label { justify-content: center; }
+    .contact-inner .section-label::after { display: none; }
+    .contact-form {
+      background: var(--dark3);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 48px;
+      margin-top: 48px; text-align: left;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-size: 12px; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: rgba(200,216,232,0.04);
+      border: 1px solid rgba(200,216,232,0.1);
+      border-radius: 6px; padding: 12px 16px;
+      color: white; font-size: 14px;
+      transition: border-color .2s; outline: none;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--emerald);
+    }
+    .form-group select option { background: var(--dark3); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      width: 100%; background: var(--emerald);
+      color: var(--dark); padding: 14px;
+      border: none; border-radius: 6px;
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      cursor: pointer; transition: opacity .2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { opacity: 0.9; }
+
+    /* ─── FOOTER ──────────────────────────────── */
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--border);
+      padding: 60px 5% 40px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px; max-width: 1200px; margin: 0 auto 60px;
+    }
+    .footer-brand p {
+      font-size: 14px; color: var(--text-dim);
+      line-height: 1.7; margin-top: 16px; max-width: 300px;
+    }
+    .footer-col h5 {
+      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-dim); margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a {
+      text-decoration: none; color: var(--text-dim);
+      font-size: 14px; transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--emerald); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 32px; max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--text-dim);
+    }
+    .footer-status {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 900px) {
+      .axiom-grid, .agents-grid { grid-template-columns: 1fr; gap: 40px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 60px auto 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .agent-cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 24px; }
+      section { padding: 80px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg class="hex" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="none" stroke="#00ff88" stroke-width="1.5"/>
+      <polygon points="20,8 30,14 30,26 20,32 10,26 10,14" fill="rgba(0,255,136,0.08)" stroke="rgba(0,255,136,0.3)" stroke-width="1"/>
+      <circle cx="20" cy="20" r="4" fill="#00ff88"/>
+    </svg>
+    <span>CyberChain</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#axiom">AXIOM</a></li>
+    <li><a href="#agents">Agent Farm</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book a Call</a>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────── -->
+<section id="hero">
+  <video id="hero-video" autoplay loop muted playsinline poster="https://d3u0tzju9qaucj.cloudfront.net/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/a2800ee2-9b6a-4750-8b9c-6252dcf946a4.png">
+    <source src="https://cloud-cdn.higgsfield.ai/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/2b2e353c-8c5f-446a-bf0d-8edd4fff5132.mp4" type="video/mp4">
+  </video>
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">AI-Native Infrastructure</div>
+    <h1>
+      The Intelligence Layer<br>
+      Your Enterprise <span class="accent">Needs Now</span>
+    </h1>
+    <p>CyberChain deploys custom AI agent farms that work around the clock — monitoring threats, automating decisions, and scaling your operations without scaling headcount.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">Deploy Your Agent Farm</a>
+      <a href="#axiom" class="btn-secondary">See AXIOM in Action</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ─── STATS ─────────────────────────────────── -->
+<div id="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-number">25+</div>
+      <div class="stat-label">Specialized Agents</div>
+    </div>
+    <div>
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Always-On Monitoring</div>
+    </div>
+    <div>
+      <div class="stat-number">&lt;2s</div>
+      <div class="stat-label">Threat Response Time</div>
+    </div>
+    <div>
+      <div class="stat-number">1T</div>
+      <div class="stat-label">Parameter AI Models</div>
+    </div>
+    <div>
+      <div class="stat-number">100%</div>
+      <div class="stat-label">On-Premise Option</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── AXIOM ─────────────────────────────────── -->
+<section id="axiom">
+  <div class="axiom-grid">
+    <div>
+      <div class="section-label">AXIOM INTELLIGENCE ENGINE</div>
+      <h2 class="section-title">Your AI CISO,<br>Always On Duty</h2>
+      <p class="section-sub">AXIOM is CyberChain's proprietary command intelligence layer — a CISO-grade AI that continuously monitors your threat surface, synthesizes intelligence, and coordinates your entire agent network.</p>
+      <ul class="axiom-features">
+        <li>
+          <div>
+            <strong>Real-Time Threat Briefings</strong>
+            Daily CVE analysis, dark web monitoring, and executive-level risk summaries — delivered to your channel of choice.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Multi-Model Intelligence</strong>
+            Powered by frontier models including Kimi K2.6 (1T parameters) and Claude — selecting the best model for each task automatically.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Autonomous Decision Engine</strong>
+            AXIOM doesn't just report — it acts. Incident triage, alert routing, and policy enforcement happen without human intervention.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Telegram / Slack / WhatsApp Native</strong>
+            Interact with your entire agent farm through the messaging platform your team already uses.
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="axiom-right">
+      <!-- AXIOM Video -->
+      <div class="axiom-video-wrap">
+        <video autoplay loop muted playsinline poster="https://d3u0tzju9qaucj.cloudfront.net/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/90dcf1f7-0658-41bd-9ee3-424eb8e85218.png">
+          <source src="https://cloud-cdn.higgsfield.ai/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/badb91bb-6afe-4725-a259-740d56482793.mp4" type="video/mp4">
+        </video>
+        <div class="axiom-tag">AXIOM v3 · Live</div>
+      </div>
+
+      <!-- Live Threat Intel Feed -->
+      <div class="threat-feed">
+        <div class="threat-feed-header">
+          <div class="feed-dot"></div>
+          <div class="feed-title">AXIOM · Live Threat Intelligence</div>
+          <div class="feed-time" id="feed-clock">08:00 EDT</div>
+        </div>
+        <div class="threat-feed-body">
+          <div class="feed-scroll" id="threat-feed-scroll">
+
+            <!-- AXIOM morning briefing header -->
+            <div class="feed-entry axiom-msg">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-medium">AXIOM</div>
+                <div class="feed-ts">08:00:01</div>
+              </div>
+              <div class="feed-entry-title">Daily Threat Briefing — Apr 24, 2026</div>
+              <div class="feed-entry-body">
+                <span class="kv">Sources monitored: </span><span class="val">NVD, CISA, MITRE, Dark Web</span><br>
+                <span class="kv">CVEs ingested: </span><span class="val highlight">47 new</span> <span class="kv">| Critical: </span><span class="val">6</span> <span class="kv">| High: </span><span class="val">18</span><br>
+                <span class="kv">Threat actors active: </span><span class="val">APT29, Lazarus Group, REvil variant</span>
+              </div>
+            </div>
+
+            <!-- CVE 1 - Critical -->
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-critical">Critical</div>
+                <div class="feed-cve">CVE-2026-1847</div>
+                <div class="feed-ts">08:00:03</div>
+              </div>
+              <div class="feed-entry-title">Microsoft Windows NTLM Auth RCE — Active Exploitation</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">9.8</span> <span class="kv">| Affected: </span><span class="val">Windows Server 2019/2022, Win 11</span><br>
+                <span class="kv">Vector: </span><span class="val">Network, no auth required</span><br>
+                <span class="kv">Status: </span><span class="val highlight">Patch available — IMMEDIATE ACTION</span><br>
+                <span class="kv">Recommendation: </span><span class="val">Apply KB5036980 within 24h. Block SMB at perimeter.</span>
+              </div>
+            </div>
+
+            <!-- CVE 2 - Critical -->
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-critical">Critical</div>
+                <div class="feed-cve">CVE-2026-2204</div>
+                <div class="feed-ts">08:00:05</div>
+              </div>
+              <div class="feed-entry-title">Cisco IOS XE Web UI Auth Bypass — PoC Circulating</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">9.6</span> <span class="kv">| Affected: </span><span class="val">Cisco IOS XE 17.x, 16.x</span><br>
+                <span class="kv">Vector: </span><span class="val">HTTP, unauthenticated, remote</span><br>
+                <span class="kv">Status: </span><span class="val highlight">PoC public — exploitation imminent</span><br>
+                <span class="kv">Recommendation: </span><span class="val">Disable HTTP server or restrict to mgmt VLAN.</span>
+              </div>
+            </div>
+
+            <!-- CVE 3 - High -->
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-high">High</div>
+                <div class="feed-cve">CVE-2026-0932</div>
+                <div class="feed-ts">08:00:07</div>
+              </div>
+              <div class="feed-entry-title">OpenSSL 3.x Certificate Parsing Heap Overflow</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">8.1</span> <span class="kv">| Affected: </span><span class="val">OpenSSL 3.0.0–3.3.2</span><br>
+                <span class="kv">Vector: </span><span class="val">Network, crafted TLS certificate</span><br>
+                <span class="kv">Status: </span><span class="val">Patch in 3.4.0</span><br>
+                <span class="kv">Recommendation: </span><span class="val">Upgrade to OpenSSL 3.4.0+. Review TLS endpoints.</span>
+              </div>
+            </div>
+
+            <!-- AXIOM action log -->
+            <div class="feed-entry axiom-msg">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-medium">AXIOM</div>
+                <div class="feed-ts">08:00:09</div>
+              </div>
+              <div class="feed-entry-title">Automated Response Initiated</div>
+              <div class="feed-entry-body">
+                <span class="highlight">→</span> Ticketed CVE-2026-1847, CVE-2026-2204 in Jira (P1)<br>
+                <span class="highlight">→</span> Notified SecOps via Telegram @CyberChainCISO_bot<br>
+                <span class="highlight">→</span> Triggered patch verification scan on 14 endpoints<br>
+                <span class="highlight">→</span> Updated firewall blocklist with 3 new C2 IPs
+              </div>
+            </div>
+
+            <!-- CVE 4 - High -->
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-high">High</div>
+                <div class="feed-cve">CVE-2026-1103</div>
+                <div class="feed-ts">08:00:12</div>
+              </div>
+              <div class="feed-entry-title">VMware ESXi 8.x Guest-to-Host Escape via SVGA</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">8.8</span> <span class="kv">| Affected: </span><span class="val">ESXi 8.0 U1–U3, vSphere 8.x</span><br>
+                <span class="kv">Vector: </span><span class="val">Local, low privilege guest user</span><br>
+                <span class="kv">Recommendation: </span><span class="val">Apply ESXi800-202404001. Disable SVGA if unused.</span>
+              </div>
+            </div>
+
+            <!-- CVE 5 - Medium -->
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-medium">Medium</div>
+                <div class="feed-cve">CVE-2026-0771</div>
+                <div class="feed-ts">08:00:14</div>
+              </div>
+              <div class="feed-entry-title">Apache Kafka 3.x ACL Bypass — Unauthorized Topic Access</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val">6.5</span> <span class="kv">| Affected: </span><span class="val">Kafka 3.0.0–3.7.0</span><br>
+                <span class="kv">Vector: </span><span class="val">Network, low privilege authenticated</span><br>
+                <span class="kv">Recommendation: </span><span class="val">Upgrade to 3.7.1+. Audit ACL configs immediately.</span>
+              </div>
+            </div>
+
+            <!-- AXIOM dark web alert -->
+            <div class="feed-entry axiom-msg">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-high">AXIOM · Dark Web</div>
+                <div class="feed-ts">08:00:18</div>
+              </div>
+              <div class="feed-entry-title">Credential Leak Detected — Finance Sector</div>
+              <div class="feed-entry-body">
+                <span class="kv">Source: </span><span class="val">BreachForums — posted 03:14 EDT</span><br>
+                <span class="kv">Scope: </span><span class="val highlight">14,200 corporate email/password combos</span><br>
+                <span class="kv">Industries: </span><span class="val">Banking (CA), Insurance, FinTech</span><br>
+                <span class="highlight">→</span> Cross-referencing against client domains now...
+              </div>
+            </div>
+
+            <!-- DUPLICATE ENTRIES FOR SEAMLESS LOOP -->
+            <div class="feed-entry axiom-msg">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-medium">AXIOM</div>
+                <div class="feed-ts">08:00:01</div>
+              </div>
+              <div class="feed-entry-title">Daily Threat Briefing — Apr 24, 2026</div>
+              <div class="feed-entry-body">
+                <span class="kv">Sources monitored: </span><span class="val">NVD, CISA, MITRE, Dark Web</span><br>
+                <span class="kv">CVEs ingested: </span><span class="val highlight">47 new</span> <span class="kv">| Critical: </span><span class="val">6</span> <span class="kv">| High: </span><span class="val">18</span><br>
+                <span class="kv">Threat actors active: </span><span class="val">APT29, Lazarus Group, REvil variant</span>
+              </div>
+            </div>
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-critical">Critical</div>
+                <div class="feed-cve">CVE-2026-1847</div>
+                <div class="feed-ts">08:00:03</div>
+              </div>
+              <div class="feed-entry-title">Microsoft Windows NTLM Auth RCE — Active Exploitation</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">9.8</span> <span class="kv">| Affected: </span><span class="val">Windows Server 2019/2022, Win 11</span><br>
+                <span class="kv">Status: </span><span class="val highlight">Patch available — IMMEDIATE ACTION</span>
+              </div>
+            </div>
+            <div class="feed-entry">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-critical">Critical</div>
+                <div class="feed-cve">CVE-2026-2204</div>
+                <div class="feed-ts">08:00:05</div>
+              </div>
+              <div class="feed-entry-title">Cisco IOS XE Web UI Auth Bypass — PoC Circulating</div>
+              <div class="feed-entry-body">
+                <span class="kv">CVSS: </span><span class="val highlight">9.6</span> <span class="kv">| Affected: </span><span class="val">Cisco IOS XE 17.x, 16.x</span><br>
+                <span class="kv">Status: </span><span class="val highlight">PoC public — exploitation imminent</span>
+              </div>
+            </div>
+            <div class="feed-entry axiom-msg">
+              <div class="feed-entry-header">
+                <div class="feed-severity sev-medium">AXIOM</div>
+                <div class="feed-ts">08:00:09</div>
+              </div>
+              <div class="feed-entry-title">Automated Response Initiated</div>
+              <div class="feed-entry-body">
+                <span class="highlight">→</span> Ticketed CVE-2026-1847, CVE-2026-2204 in Jira (P1)<br>
+                <span class="highlight">→</span> Notified SecOps via Telegram @CyberChainCISO_bot<br>
+                <span class="highlight">→</span> Triggered patch verification scan on 14 endpoints
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AGENT FARM ─────────────────────────────── -->
+<section id="agents">
+  <div class="agents-inner">
+    <div class="section-label">AGENT NETWORK</div>
+    <h2 class="section-title">25 Agents.<br>One Command Layer.</h2>
+    <p class="section-sub">Your custom agent farm operates as a unified intelligence network — each agent specialized, all coordinated by AXIOM. Built for your industry, scaled to your threat model.</p>
+    <div class="agents-grid">
+      <div class="agents-image-wrap">
+        <video autoplay loop muted playsinline poster="https://d3u0tzju9qaucj.cloudfront.net/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/d6b67a6f-e9cc-4d16-896d-63af5701746d.png">
+          <source src="https://cloud-cdn.higgsfield.ai/fa610e94-ae65-4ba6-9b87-e37d4beb4f08/907dc4f8-e4ff-47f1-9456-cf7e4e1d2c23.mp4" type="video/mp4">
+        </video>
+        <div class="agents-tag">25 Active Agents</div>
+      </div>
+      <div class="agent-cards">
+        <div class="agent-card">
+          <div class="icon">🛡️</div>
+          <h4>CISO / Threat Intel</h4>
+          <p>Continuous CVE monitoring, dark web surveillance, and executive threat briefings.</p>
+        </div>
+        <div class="agent-card">
+          <div class="icon">🤖</div>
+          <h4>Automation</h4>
+          <p>Workflow automation, RPA, and cross-system orchestration without code.</p>
+        </div>
+        <div class="agent-card">
+          <div class="icon">📊</div>
+          <h4>Analytics</h4>
+          <p>Real-time data synthesis, anomaly detection, and predictive intelligence.</p>
+        </div>
+        <div class="agent-card">
+          <div class="icon">💬</div>
+          <h4>Comms & CRM</h4>
+          <p>Multi-channel engagement, lead qualification, and customer intelligence agents.</p>
+        </div>
+        <div class="agent-card">
+          <div class="icon">🔗</div>
+          <h4>Integration Layer</h4>
+          <p>Connects your existing stack — Slack, Jira, Salesforce, and 200+ more.</p>
+        </div>
+        <div class="agent-card">
+          <div class="icon">⚡</div>
+          <h4>Custom Agents</h4>
+          <p>Purpose-built agents designed specifically for your industry and workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ────────────────────────────────── -->
+<section id="services">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">WHAT WE BUILD</div>
+    <h2 class="section-title">Enterprise AI,<br>Deployed in Weeks</h2>
+    <p class="section-sub">From security operations to full-stack automation — CyberChain delivers production-ready AI infrastructure, not consulting decks.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>Agent Farm Deployment</h3>
+        <p>End-to-end design, build, and deployment of your custom AI agent network. We deliver a working system — not a prototype.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔐</div>
+        <h3>AI-Powered SOC</h3>
+        <p>Replace or augment your security operations center with AXIOM-driven threat detection and autonomous incident response.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Workflow Automation</h3>
+        <p>Identify your highest-cost manual processes and deploy targeted agents to eliminate them — measurable ROI in 30 days.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>Enterprise AI Strategy</h3>
+        <p>Board-ready AI roadmaps, technology selection, vendor evaluation, and implementation governance for C-suite executives.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>On-Premise Deployment</h3>
+        <p>Full sovereignty over your AI infrastructure. We deploy on your hardware, your cloud, your rules — zero data leaves your perimeter.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📡</div>
+        <h3>Managed Agent Operations</h3>
+        <p>Ongoing monitoring, model updates, performance tuning, and 24/7 support for your live agent farm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ──────────────────────────────────── -->
+<section id="pricing">
+  <div class="pricing-inner">
+    <div class="section-label">INVESTMENT</div>
+    <h2 class="section-title">Straightforward Pricing</h2>
+    <p class="section-sub">No hidden fees. No lock-in. Pick the tier that matches your scale — and upgrade when you're ready.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-tier">Foundation</div>
+        <div class="pricing-price">$4,999<span>/mo</span></div>
+        <div class="pricing-sub">Up to 5 agents · Setup from $9,999</div>
+        <ul class="pricing-features">
+          <li>5 specialized AI agents</li>
+          <li>AXIOM command layer (standard)</li>
+          <li>1 messaging channel integration</li>
+          <li>Daily threat briefings</li>
+          <li>Business hours support</li>
+          <li class="dim">Custom model fine-tuning</li>
+          <li class="dim">On-premise deployment</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Professional</div>
+        <div class="pricing-price">$14,999<span>/mo</span></div>
+        <div class="pricing-sub">Up to 15 agents · Setup from $24,999</div>
+        <ul class="pricing-features">
+          <li>15 specialized AI agents</li>
+          <li>AXIOM Pro (multi-model)</li>
+          <li>All messaging channels</li>
+          <li>Real-time threat intelligence</li>
+          <li>24/7 monitoring & support</li>
+          <li>Custom model fine-tuning</li>
+          <li class="dim">On-premise deployment</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Book a Call</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-tier">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-sub">25+ agents · Full infrastructure</div>
+        <ul class="pricing-features">
+          <li>Unlimited agents</li>
+          <li>AXIOM Enterprise (dedicated)</li>
+          <li>Full stack integration</li>
+          <li>On-premise or private cloud</li>
+          <li>Dedicated success team</li>
+          <li>Custom model training</li>
+          <li>SLA with uptime guarantee</li>
+        </ul>
+        <a href="#contact" class="pricing-cta">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TIMELINE ─────────────────────────────────── -->
+<section id="timeline">
+  <div class="timeline-inner">
+    <div class="section-label">DEPLOYMENT TIMELINE</div>
+    <h2 class="section-title">Live in 6 Weeks</h2>
+    <p class="section-sub">From discovery call to production deployment — a proven process that delivers working AI infrastructure, not endless planning.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Week 1</div>
+        <h4>Discovery & Architecture</h4>
+        <p>Deep-dive into your operations, threat model, and automation opportunities. We design your agent farm blueprint and present the full technical architecture.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Weeks 2–3</div>
+        <h4>Build & Configure</h4>
+        <p>Agent development, AXIOM configuration, model selection, and integration with your existing stack. Continuous collaboration with your team throughout.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Week 4</div>
+        <h4>Testing & Hardening</h4>
+        <p>Full system testing, security review, edge case training, and performance tuning. Your team participates in acceptance testing.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-week">Weeks 5–6</div>
+        <h4>Deployment & Handover</h4>
+        <p>Production deployment, team training, documentation delivery, and 30-day hypercare support. Your agents go live — and stay live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ──────────────────────────────────── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label">GET STARTED</div>
+    <h2 class="section-title">Book Your<br>Strategy Call</h2>
+    <p class="section-sub" style="margin:0 auto 0;text-align:center;">Tell us about your infrastructure. We'll show you exactly what an agent farm looks like for your organization — in 45 minutes.</p>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Business Email</label>
+        <input type="email" placeholder="john@company.com" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Company</label>
+          <input type="text" placeholder="Acme Corp" required>
+        </div>
+        <div class="form-group">
+          <label>Company Size</label>
+          <select required>
+            <option value="">Select...</option>
+            <option>1–50 employees</option>
+            <option>51–250 employees</option>
+            <option>251–1,000 employees</option>
+            <option>1,000+ employees</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Primary Interest</label>
+        <select required>
+          <option value="">Select...</option>
+          <option>AI Security Operations (AXIOM / SOC)</option>
+          <option>Custom Agent Farm Deployment</option>
+          <option>Workflow Automation</option>
+          <option>Enterprise AI Strategy</option>
+          <option>On-Premise AI Infrastructure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell Us About Your Challenge</label>
+        <textarea placeholder="What are you trying to automate, secure, or accelerate?"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Request Strategy Call →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="text-decoration:none;">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="none" stroke="#00ff88" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="4" fill="#00ff88"/>
+        </svg>
+        <span style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00ff88;">CyberChain</span>
+      </a>
+      <p>AI-native infrastructure for forward-thinking enterprises. Toronto-based. Globally deployed. Zero-compromise on security or performance.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Platform</h5>
+      <ul>
+        <li><a href="#axiom">AXIOM</a></li>
+        <li><a href="#agents">Agent Farm</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Security</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CyberChain Technologies Inc. Toronto, Canada.</span>
+    <div class="footer-status">
+      <div class="status-dot"></div>
+      <span>All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── THREE.JS PARTICLE NETWORK ──────────────── -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.z = 500;
+
+  // Particles
+  const particleCount = 180;
+  const positions = new Float32Array(particleCount * 3);
+  const particles = [];
+  for (let i = 0; i < particleCount; i++) {
+    const x = (Math.random() - 0.5) * window.innerWidth;
+    const y = (Math.random() - 0.5) * window.innerHeight;
+    const z = (Math.random() - 0.5) * 400;
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+    particles.push({
+      x, y, z,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      vz: 0
+    });
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const mat = new THREE.PointsMaterial({ color: 0x00ff88, size: 2.5, transparent: true, opacity: 0.7 });
+  const points = new THREE.Points(geo, mat);
+  scene.add(points);
+
+  // Lines
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x00d4ff, transparent: true, opacity: 0.12 });
+  let lineGroup = new THREE.Group();
+  scene.add(lineGroup);
+
+  function updateLines() {
+    scene.remove(lineGroup);
+    lineGroup = new THREE.Group();
+    const threshold = 140;
+    for (let i = 0; i < particleCount; i++) {
+      for (let j = i + 1; j < particleCount; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < threshold) {
+          const opacity = (1 - dist / threshold) * 0.25;
+          const lm = new THREE.LineBasicMaterial({ color: 0x00d4ff, transparent: true, opacity });
+          const lg = new THREE.BufferGeometry().setFromPoints([
+            new THREE.Vector3(particles[i].x, particles[i].y, particles[i].z),
+            new THREE.Vector3(particles[j].x, particles[j].y, particles[j].z)
+          ]);
+          lineGroup.add(new THREE.Line(lg, lm));
+        }
+      }
+    }
+    scene.add(lineGroup);
+  }
+
+  let frame = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    for (let i = 0; i < particleCount; i++) {
+      particles[i].x += particles[i].vx;
+      particles[i].y += particles[i].vy;
+      if (Math.abs(particles[i].x) > window.innerWidth / 2) particles[i].vx *= -1;
+      if (Math.abs(particles[i].y) > window.innerHeight / 2) particles[i].vy *= -1;
+      positions[i * 3] = particles[i].x;
+      positions[i * 3 + 1] = particles[i].y;
+    }
+    geo.attributes.position.needsUpdate = true;
+    if (frame % 3 === 0) updateLines();
+    frame++;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+</script>
+
+<script>
+// Live clock in threat feed
+(function() {
+  function updateClock() {
+    const el = document.getElementById('feed-clock');
+    if (!el) return;
+    const now = new Date();
+    const h = String(now.getHours()).padStart(2,'0');
+    const m = String(now.getMinutes()).padStart(2,'0');
+    const s = String(now.getSeconds()).padStart(2,'0');
+    el.textContent = h + ':' + m + ':' + s + ' EDT';
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+})();
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ Received — We\'ll be in touch within 24 hours';
+  btn.style.background = 'rgba(0,255,136,0.2)';
+  btn.style.color = '#00ff88';
+  btn.style.border = '1px solid #00ff88';
+  btn.disabled = true;
+}
+
+// Smooth scroll offset for fixed nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
