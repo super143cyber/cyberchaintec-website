@@ -1230,6 +1230,18 @@
   </div>
 </footer>
 
+<!-- ─── MOBILE VIDEO OPTIMIZATION ───────────────── -->
+<script>
+// On mobile: strip video sources so the browser shows the poster images instead.
+// This prevents ~36MB of autoplay video from loading on phones.
+(function() {
+  var isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (!isMobile) return;
+  document.querySelectorAll('video source').forEach(function(s) { s.remove(); });
+  document.querySelectorAll('video').forEach(function(v) { v.load(); });
+})();
+</script>
+
 <!-- ─── THREE.JS PARTICLE NETWORK ──────────────── -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -1237,16 +1249,18 @@
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: !isMobile });
+  renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
   camera.position.z = 500;
 
-  // Particles
-  const particleCount = 180;
+  // Particles — 40 on mobile, 180 on desktop
+  const particleCount = isMobile ? 40 : 180;
   const positions = new Float32Array(particleCount * 3);
   const particles = [];
   for (let i = 0; i < particleCount; i++) {
@@ -1266,16 +1280,19 @@
 
   const geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const mat = new THREE.PointsMaterial({ color: 0x00ff88, size: 2.5, transparent: true, opacity: 0.7 });
+  const mat = new THREE.PointsMaterial({ color: 0x00ff88, size: isMobile ? 3 : 2.5, transparent: true, opacity: 0.7 });
   const points = new THREE.Points(geo, mat);
   scene.add(points);
 
-  // Lines
-  const lineMat = new THREE.LineBasicMaterial({ color: 0x00d4ff, transparent: true, opacity: 0.12 });
-  let lineGroup = new THREE.Group();
-  scene.add(lineGroup);
+  // Lines — desktop only; the O(n²) distance loop is too expensive on mobile
+  let lineGroup = null;
+  if (!isMobile) {
+    lineGroup = new THREE.Group();
+    scene.add(lineGroup);
+  }
 
   function updateLines() {
+    if (!lineGroup) return;
     scene.remove(lineGroup);
     lineGroup = new THREE.Group();
     const threshold = 140;
@@ -1298,9 +1315,16 @@
     scene.add(lineGroup);
   }
 
+  // Mobile: throttle to 30 fps; desktop: full 60 fps
+  const frameInterval = isMobile ? 1000 / 30 : 0;
+  let lastTime = 0;
   let frame = 0;
-  function animate() {
+
+  function animate(timestamp) {
     requestAnimationFrame(animate);
+    if (isMobile && timestamp - lastTime < frameInterval) return;
+    lastTime = timestamp;
+
     for (let i = 0; i < particleCount; i++) {
       particles[i].x += particles[i].vx;
       particles[i].y += particles[i].vy;
@@ -1310,11 +1334,11 @@
       positions[i * 3 + 1] = particles[i].y;
     }
     geo.attributes.position.needsUpdate = true;
-    if (frame % 3 === 0) updateLines();
+    if (!isMobile && frame % 3 === 0) updateLines();
     frame++;
     renderer.render(scene, camera);
   }
-  animate();
+  animate(0);
 
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
